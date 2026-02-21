@@ -1,0 +1,6 @@
+@AppExplore_API_Prototype_HostAddress = http://localhost:5253
+
+GET {{AppExplore_API_Prototype_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
