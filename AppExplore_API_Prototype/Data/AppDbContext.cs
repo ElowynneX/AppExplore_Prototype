@@ -23,7 +23,7 @@ namespace AppExplore_API_Prototype.Data
                     Description = "Spotify is a digital music service that gives you access to millions of songs, podcasts, and audiobooks.",
                     Developer = "Spotify AB",
                     Rating = 5,
-                    Category = "Music & Audio",
+                    Category = "Music",
                     Type = new List<string> { "Apple", "Android", "Free", "Paid-Premium", "Adds" },
                     Tags = new List<string> { "Music", "Streaming", "Podcasts", "Playlists", "Podcasts" }
                 },
@@ -89,7 +89,7 @@ namespace AppExplore_API_Prototype.Data
                     Description = "YouTube Music is a music streaming service that provides official songs, albums, playlists, remixes, and live performances.",
                     Developer = "Google LLC",
                     Rating = 4,
-                    Category = "Music & Audio",
+                    Category = "Music",
                     Type = new List<string> { "Apple", "Android", "Free", "Paid-Premium", "Ads" },
                     Tags = new List<string> { "Music", "Streaming", "Playlists", "Live Performances", "Podcasts" }
                 },
@@ -100,7 +100,7 @@ namespace AppExplore_API_Prototype.Data
                     Description = "Apple Music is a subscription-based music streaming service offering millions of songs, curated playlists, and exclusive artist content.",
                     Developer = "Apple Inc.",
                     Rating = 5,
-                    Category = "Music & Audio",
+                    Category = "Music",
                     Type = new List<string> { "Apple", "Free", "Paid-Premium", "Ads" },
                     Tags = new List<string> { "Music", "Streaming", "Playlists", "Radio" }
                 },

@@ -24,31 +24,33 @@ namespace AppExplore_API_Prototype.Repository
 
         public async Task<List<AppModel>> GetFilteredApps(FilterDto filters)
         {
-            IQueryable<AppModel> query = _appDbContext.Apps;
+            var apps = await _appDbContext.Apps.ToListAsync();
 
-            // Filter by Category
+            // Category
             if (!string.IsNullOrWhiteSpace(filters.SearchCategory))
             {
-                query = query.Where(a => a.Category == filters.SearchCategory);
+                apps = apps
+                    .Where(a => a.Category == filters.SearchCategory)
+                    .ToList();
             }
 
-            // Filter by Type (List<string>)
-            if (filters.SearchType != null && filters.SearchType.Any())
+            // Type
+            if (filters.SearchType?.Any() == true)
             {
-                query = query.Where(a =>
-                    a.Type.Any(t => filters.SearchType.Contains(t))
-                );
+                apps = apps
+                    .Where(a => a.Type.Any(t => filters.SearchType.Contains(t)))
+                    .ToList();
             }
 
-            // Filter by Tags (List<string>)
-            if (filters.SearchTags != null && filters.SearchTags.Any())
+            // Tags
+            if (filters.SearchTags?.Any() == true)
             {
-                query = query.Where(a =>
-                    a.Tags.Any(tag => filters.SearchTags.Contains(tag))
-                );
+                apps = apps
+                    .Where(a => a.Tags.Any(tag => filters.SearchTags.Contains(tag)))
+                    .ToList();
             }
 
-            return await query.ToListAsync();
+            return apps;
         }
 
         public async Task<List<AppModel>> GetKeywordApps(string keyword)
