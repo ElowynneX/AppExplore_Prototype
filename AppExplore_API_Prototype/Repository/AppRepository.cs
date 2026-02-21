@@ -55,18 +55,21 @@ namespace AppExplore_API_Prototype.Repository
 
         public async Task<List<AppModel>> GetKeywordApps(string keyword)
         {
-            keyword = keyword.Trim().ToLower();
+            if (string.IsNullOrWhiteSpace(keyword))
+                return await _appDbContext.Apps.ToListAsync();
 
-            return await _appDbContext.Apps
-                .Where(app =>
-                    app.Title.ToLower().Contains(keyword) ||
-                    app.Description.ToLower().Contains(keyword) ||
-                    app.Developer.ToLower().Contains(keyword) ||
-                    app.Category.ToLower().Contains(keyword) ||
-                    app.Tags.Any(t => t.ToLower().Contains(keyword)) ||
-                    app.Type.Any(t => t.ToLower().Contains(keyword))
-                )
-                .ToListAsync();
+            keyword = keyword.ToLower();
+
+            var apps = await _appDbContext.Apps.ToListAsync(); // pull all apps into memory
+
+            return apps.Where(app =>
+                (app.Title != null && app.Title.ToLower().Contains(keyword)) ||
+                (app.Description != null && app.Description.ToLower().Contains(keyword)) //||
+                //(app.Developer != null && app.Developer.ToLower().Contains(keyword)) ||
+                //(app.Category != null && app.Category.ToLower().Contains(keyword)) ||
+                //(app.Tags != null && app.Tags.Any(tag => tag.ToLower().Contains(keyword))) ||
+                //(app.Type != null && app.Type.Any(t => t.ToLower().Contains(keyword)))
+            ).ToList();
         }
     }
 }
