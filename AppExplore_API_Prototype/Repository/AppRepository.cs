@@ -64,10 +64,10 @@ namespace AppExplore_API_Prototype.Repository
 
             return apps.Where(app =>
                 (app.Title != null && app.Title.ToLower().Contains(keyword)) ||
-                (app.Description != null && app.Description.ToLower().Contains(keyword)) //||
+                (app.Description != null && app.Description.ToLower().Contains(keyword)) ||
                 //(app.Developer != null && app.Developer.ToLower().Contains(keyword)) ||
                 //(app.Category != null && app.Category.ToLower().Contains(keyword)) ||
-                //(app.Tags != null && app.Tags.Any(tag => tag.ToLower().Contains(keyword))) ||
+                (app.Tags != null && app.Tags.Any(tag => tag.ToLower().Contains(keyword))) 
                 //(app.Type != null && app.Type.Any(t => t.ToLower().Contains(keyword)))
             ).ToList();
         }

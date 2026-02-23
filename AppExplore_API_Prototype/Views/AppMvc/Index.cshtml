@@ -1,0 +1,45 @@
+﻿@model List<AppExplore_API_Prototype.Model.AppModel>
+
+@{
+    ViewData["Title"] = "AppExplore Prototype";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="text-center my-5">
+    <h1>Discover Apps</h1>
+</div>
+
+<form method="get" class="search-bar mb-4 d-flex justify-content-center">
+    <div class="input-group" style="max-width:500px;">
+        <input type="text" class="form-control" name="searchKeyword" placeholder="Search apps..." value="@ViewBag.SearchKeyword">
+
+        <button class="btn btn-primary" type="submit">Search</button>
+
+        @if (!string.IsNullOrWhiteSpace(ViewBag.SearchKeyword))
+        {
+            <button type="button" class="btn btn-secondary" onclick="window.location='@Url.Action("Index", "AppMvc")'">Clear</button>
+        }
+    </div>
+</form>
+<div class="row">
+    @foreach (var app in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">@app.Title</h5>
+                    <p class="card-text card-text-truncate">@app.Description</p>
+                    <div class="tags mb-2">
+                        @foreach (var tag in app.Tags)
+                        {
+                            <span>@tag</span>
+                        }
+                    </div>
+                    <p><strong>Rating:</strong> @app.Rating / 5</p>
+                    <a href="@Url.Action("Details", "AppMvc", new { id = app.Id })" class="btn btn-primary mt-auto">View Details</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
