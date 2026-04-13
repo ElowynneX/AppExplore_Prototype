@@ -146,7 +146,7 @@ namespace AppExplore_API_Prototype.Data
                     Developer = "SoundCloud Ltd.",
                     Rating = 4,
                     Category = "Music",
-                    Type = new List<string> { "Apple", "Android", "Free", "Paid-Premium", "Ads" },
+                    Type = new List<string> { "Apple", "Android", "Free", "No Paid-Premium", "Ads" },
                     Tags = new List<string> { "Music", "Streaming", "Indie", "Creators", "Podcasts" },
                     ImageUrl = "/images/apps/SoundCloud_Logo.jpg"
                 },

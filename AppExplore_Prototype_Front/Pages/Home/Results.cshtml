@@ -1,0 +1,31 @@
+﻿@page
+@model AppExplore_Prototype_Front.Pages.Home.ResultsModel
+@{
+}
+
+<h1>Search Results</h1>
+
+<div class="app-grid">
+
+    @foreach (var app in Model.Results)
+    {
+        <a asp-page="/Home/Details" asp-route-id="@app.Id" class="app-card-link">
+
+            <div class="app-card">
+
+                <div class="app-card-image">
+                    <img src="@Model.ImageConnectionString@app.ImageUrl" />
+                </div>
+
+                <div class="app-card-body">
+                    <h3>@app.Title</h3>
+                    <span>@app.Category</span>
+                    <p>@app.Description</p>
+                </div>
+
+            </div>
+
+        </a>
+    }
+
+</div>

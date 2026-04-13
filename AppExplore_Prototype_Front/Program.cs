@@ -1,3 +1,5 @@
+using AppExplore_Prototype_Front.Services;
+
 namespace AppExplore_Prototype_Front
 {
     public class Program
@@ -8,6 +10,8 @@ namespace AppExplore_Prototype_Front
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+            builder.Services.AddHttpClient();
+            builder.Services.AddHttpClient<AppApiService>();
 
             var app = builder.Build();
 

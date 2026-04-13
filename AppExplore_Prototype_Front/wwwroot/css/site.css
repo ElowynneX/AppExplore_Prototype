@@ -29,3 +29,415 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+/* =========================
+   GLOBAL BASE STYLES
+========================= */
+
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background-color: #f6f7fb;
+    color: #1f2937;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Center page content */
+.container, .text-center {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* =========================
+   HEADER TITLE AREA
+========================= */
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* =========================
+   CARD-LIKE FORM SECTION
+========================= */
+
+form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+}
+
+/* =========================
+   CHECKBOX GRID STYLE
+========================= */
+
+#tagContainer,
+form div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Individual checkbox items */
+input[type="checkbox"] {
+    margin-right: 6px;
+    transform: scale(1.1);
+}
+
+/* Label styling */
+label {
+    background: #f3f4f6;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+    label:hover {
+        background: #e5e7eb;
+    }
+
+/* =========================
+   BUTTON STYLING
+========================= */
+
+button.btn,
+button {
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 15px;
+}
+
+    button:hover {
+        background-color: #4338ca;
+    }
+
+    button:active {
+        transform: scale(0.98);
+    }
+
+/* =========================
+   TAG EMPTY MESSAGE
+========================= */
+
+#tagMessage {
+    font-style: italic;
+    color: #6b7280;
+    margin-top: 10px;
+}
+
+/* =========================
+   SPACING HELPERS
+========================= */
+
+br {
+    margin-bottom: 10px;
+}
+
+/* =========================
+   FILTER PANEL (MAIN CARD)
+========================= */
+
+.filter-panel {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* spacing between sections */
+.filter-section {
+    margin-bottom: 20px;
+}
+
+/* headings inside panel */
+.filter-panel h1 {
+    margin-bottom: 20px;
+}
+
+.filter-panel h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* =========================
+   SEARCH BAR
+========================= */
+
+.search-container {
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    font-size: 0.95rem;
+}
+
+/* =========================
+   CATEGORY DROPDOWN (VISUAL MATCH)
+========================= */
+
+#categorySelect {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+}
+
+/* =========================
+   TAG CHIPS AREA
+========================= */
+
+#tagContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+    #tagContainer div {
+        display: flex;
+        align-items: center;
+    }
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    margin-top: 20px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: #4f46e5;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+    button:hover {
+        background: #4338ca;
+    }
+
+/* GRID LAYOUT */
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* CARD */
+.app-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .app-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+/* IMAGE */
+.app-card-image {
+    width: 100%;
+    height: 140px;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .app-card-image img {
+        max-width: 80px;
+        max-height: 80px;
+        object-fit: contain;
+    }
+
+/* BODY */
+.app-card-body {
+    padding: 15px;
+}
+
+.app-title {
+    font-size: 18px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.app-category {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 12px;
+    padding: 3px 8px;
+    background: #e8f0ff;
+    color: #2b5cff;
+    border-radius: 8px;
+}
+
+.app-description {
+    font-size: 13px;
+    color: #555;
+    margin-top: 10px;
+    /* clamp long text */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.app-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.app-card-link:hover .app-card {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+/* PAGE CONTAINER */
+.app-details-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* HEADER */
+.app-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+/* LOGO */
+.app-logo img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    border-radius: 16px;
+    background: #f5f5f5;
+    padding: 10px;
+}
+
+/* TITLE */
+.app-title {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.app-category {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 13px;
+    padding: 4px 10px;
+    background: #e8f0ff;
+    color: #2b5cff;
+    border-radius: 12px;
+}
+
+/* SECTIONS */
+.app-section {
+    margin-top: 25px;
+}
+
+    .app-section h3 {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+/* TAG ROW */
+.tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* PILLS */
+.pill {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    display: inline-block;
+}
+
+.type-pill {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.tag-pill {
+    background: #e8f7ee;
+    color: #1f8a4c;
+}
+
+
+/* TOP BAR */
+.topbar {
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid #eee;
+    padding: 18px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    /* center content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CENTERED TITLE */
+.site-title {
+    font-size: 28px; /* bigger */
+    font-weight: 800;
+    text-decoration: none;
+    color: #2b5cff;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+    /* hover effect */
+    .site-title:hover {
+        color: #1d43c7;
+        transform: scale(1.03);
+    }
