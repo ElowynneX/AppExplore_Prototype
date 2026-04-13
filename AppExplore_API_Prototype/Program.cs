@@ -40,6 +40,9 @@ namespace AppExplore_API_Prototype
             app.UseSwagger();
             app.UseSwaggerUI();
 
+            //Add static files
+            app.UseStaticFiles();
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();

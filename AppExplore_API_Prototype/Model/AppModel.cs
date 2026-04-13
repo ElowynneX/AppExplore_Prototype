@@ -11,6 +11,8 @@
         public List<string> Type { get; set; }
         public List<string> Tags { get; set; }
 
+        public string ImageUrl { get; set; }
+
         //Constructors
         public AppModel() { }
 
